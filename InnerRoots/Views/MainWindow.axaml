@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:InnerRoots.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="InnerRoots.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="InnerRoots">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+<StackPanel>
+    <TextBlock Text="Family Tree" FontSize="20" HorizontalAlignment="Center" />
+    <ListBox ItemsSource="{Binding People}"
+             SelectedItem="{Binding SelectedPerson}"
+             >
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding FirstName}"></TextBlock>    
+                    
+           </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+    <Button Content="Add Person" Command="{Binding AddPersonCommand}" />
+</StackPanel>
+</Window>
