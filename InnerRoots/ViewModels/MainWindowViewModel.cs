@@ -4,7 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using InnerRoots.Models;
 
 namespace InnerRoots.ViewModels;
-
+    
 public partial class MainWindowViewModel : ViewModelBase
 {
      public ObservableCollection<Person> People { get; set; } = new();

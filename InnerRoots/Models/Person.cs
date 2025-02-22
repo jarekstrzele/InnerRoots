@@ -13,7 +13,7 @@ public class Person
    public DateTime? Birthday { get; set; }
    public DateTime? Deathday { get; set; }
    
-   public string Notes { get; set; }
+   public string? Notes { get; set; }
    
    public List<Person> Children { get; set; } = new();
    
